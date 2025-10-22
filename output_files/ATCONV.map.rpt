@@ -1,0 +1,482 @@
+Analysis & Synthesis report for ATCONV
+Sat May 20 22:48:30 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ATCONV|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat May 20 22:48:30 2023       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; ATCONV                                      ;
+; Top-level Entity Name              ; ATCONV                                      ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 969                                         ;
+;     Total combinational functions  ; 850                                         ;
+;     Dedicated logic registers      ; 315                                         ;
+; Total registers                    ; 315                                         ;
+; Total pins                         ; 82                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE55F23A7       ;                    ;
+; Top-level entity name                                            ; ATCONV             ; ATCONV             ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                               ;
++----------------------------------+-----------------+------------------------+------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------+---------+
+; ATCONV.v                         ; yes             ; User Verilog HDL File  ; D:/hw4_new/ATCONV.v          ;         ;
++----------------------------------+-----------------+------------------------+------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 969       ;
+;                                             ;           ;
+; Total combinational functions               ; 850       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 274       ;
+;     -- 3 input functions                    ; 350       ;
+;     -- <=2 input functions                  ; 226       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 464       ;
+;     -- arithmetic mode                      ; 386       ;
+;                                             ;           ;
+; Total registers                             ; 315       ;
+;     -- Dedicated logic registers            ; 315       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 82        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 315       ;
+; Total fan-out                               ; 3736      ;
+; Average fan-out                             ; 2.81      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |ATCONV                    ; 850 (850)           ; 315 (315)                 ; 0           ; 0            ; 0       ; 0         ; 82   ; 0            ; |ATCONV             ; ATCONV      ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ATCONV|state                                                                                                   ;
++------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+
+; Name       ; state.0111 ; state.0110 ; state.0101 ; state.0100 ; state.0011 ; state.0010 ; state.0001 ; state.0000 ; state.1000 ;
++------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+
+; state.0000 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ;
+; state.0001 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 1          ; 0          ;
+; state.0010 ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 1          ; 0          ;
+; state.0011 ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 1          ; 0          ;
+; state.0100 ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 1          ; 0          ;
+; state.0101 ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ;
+; state.0110 ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ;
+; state.0111 ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ;
+; state.1000 ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 1          ;
++------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; tempaxis[3][11]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[3][10]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[3][9]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[3][8]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[3][7]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[5][11]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[5][10]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[5][9]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[5][8]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[6][11]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[6][10]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[6][9]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[6][8]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[6][7]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[8][11]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[8][10]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[8][9]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[8][8]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[8][7]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[9][11]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[9][10]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[9][9]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[9][8]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[9][7]                          ; Stuck at GND due to stuck port data_in ;
+; tempaxis[10][11]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[10][10]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[10][9]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[10][8]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[10][7]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[11][11]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[11][10]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[11][9]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[11][8]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[12][11]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[12][10]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[12][9]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[12][8]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[14][11]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[14][10]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[14][9]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[14][8]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[15][11]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[15][10]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[15][9]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[15][8]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[15][7]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[16][11]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[16][10]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[16][9]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[16][8]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[17][11]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[17][10]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[17][9]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[17][8]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[3][0]                          ; Merged with tempaxis[15][0]            ;
+; tempaxis[9][0]                          ; Merged with tempaxis[15][0]            ;
+; tempaxis[6][0]                          ; Merged with tempaxis[10][0]            ;
+; tempaxis[8][0]                          ; Merged with tempaxis[10][0]            ;
+; tempaxis[3][1]                          ; Merged with tempaxis[15][1]            ;
+; tempaxis[9][1]                          ; Merged with tempaxis[15][1]            ;
+; tempaxis[6][1]                          ; Merged with tempaxis[10][1]            ;
+; tempaxis[8][1]                          ; Merged with tempaxis[10][1]            ;
+; tempaxis[3][2]                          ; Merged with tempaxis[15][2]            ;
+; tempaxis[9][2]                          ; Merged with tempaxis[15][2]            ;
+; tempaxis[6][2]                          ; Merged with tempaxis[10][2]            ;
+; tempaxis[8][2]                          ; Merged with tempaxis[10][2]            ;
+; tempaxis[3][3]                          ; Merged with tempaxis[15][3]            ;
+; tempaxis[9][3]                          ; Merged with tempaxis[15][3]            ;
+; tempaxis[6][3]                          ; Merged with tempaxis[10][3]            ;
+; tempaxis[8][3]                          ; Merged with tempaxis[10][3]            ;
+; tempaxis[3][4]                          ; Merged with tempaxis[15][4]            ;
+; tempaxis[9][4]                          ; Merged with tempaxis[15][4]            ;
+; tempaxis[6][4]                          ; Merged with tempaxis[10][4]            ;
+; tempaxis[8][4]                          ; Merged with tempaxis[10][4]            ;
+; tempaxis[3][5]                          ; Merged with tempaxis[15][5]            ;
+; tempaxis[9][5]                          ; Merged with tempaxis[15][5]            ;
+; tempaxis[6][5]                          ; Merged with tempaxis[10][5]            ;
+; tempaxis[8][5]                          ; Merged with tempaxis[10][5]            ;
+; tempaxis[0][11]                         ; Merged with tempaxis[0][10]            ;
+; tempaxis[0][7]                          ; Merged with tempaxis[0][10]            ;
+; tempaxis[0][8]                          ; Merged with tempaxis[0][10]            ;
+; tempaxis[0][9]                          ; Merged with tempaxis[0][10]            ;
+; tempaxis[1][11]                         ; Merged with tempaxis[1][10]            ;
+; tempaxis[1][7]                          ; Merged with tempaxis[1][10]            ;
+; tempaxis[1][8]                          ; Merged with tempaxis[1][10]            ;
+; tempaxis[1][9]                          ; Merged with tempaxis[1][10]            ;
+; tempaxis[2][11]                         ; Merged with tempaxis[2][10]            ;
+; tempaxis[2][7]                          ; Merged with tempaxis[2][10]            ;
+; tempaxis[2][8]                          ; Merged with tempaxis[2][10]            ;
+; tempaxis[2][9]                          ; Merged with tempaxis[2][10]            ;
+; tempaxis[4][11]                         ; Merged with tempaxis[4][10]            ;
+; tempaxis[4][7]                          ; Merged with tempaxis[4][10]            ;
+; tempaxis[4][8]                          ; Merged with tempaxis[4][10]            ;
+; tempaxis[4][9]                          ; Merged with tempaxis[4][10]            ;
+; tempaxis[7][11]                         ; Merged with tempaxis[7][10]            ;
+; tempaxis[7][7]                          ; Merged with tempaxis[7][10]            ;
+; tempaxis[7][8]                          ; Merged with tempaxis[7][10]            ;
+; tempaxis[7][9]                          ; Merged with tempaxis[7][10]            ;
+; tempaxis[13][11]                        ; Merged with tempaxis[13][10]           ;
+; tempaxis[13][7]                         ; Merged with tempaxis[13][10]           ;
+; tempaxis[13][8]                         ; Merged with tempaxis[13][10]           ;
+; tempaxis[13][9]                         ; Merged with tempaxis[13][10]           ;
+; tempaxis[3][6]                          ; Merged with tempaxis[15][6]            ;
+; tempaxis[9][6]                          ; Merged with tempaxis[15][6]            ;
+; tempaxis[6][6]                          ; Merged with tempaxis[10][6]            ;
+; tempaxis[8][6]                          ; Merged with tempaxis[10][6]            ;
+; tempaxis[4][10]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[13][10]                        ; Stuck at GND due to stuck port data_in ;
+; tempaxis[17][7]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[17][6]                         ; Stuck at GND due to stuck port data_in ;
+; state~4                                 ; Lost fanout                            ;
+; state~5                                 ; Lost fanout                            ;
+; state~6                                 ; Lost fanout                            ;
+; tempaxis[16][6]                         ; Stuck at GND due to stuck port data_in ;
+; tempaxis[16][7]                         ; Stuck at GND due to stuck port data_in ;
+; coltempo[6]                             ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 116 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 315   ;
+; Number of registers using Synchronous Clear  ; 22    ;
+; Number of registers using Synchronous Load   ; 15    ;
+; Number of registers using Asynchronous Clear ; 49    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 302   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ATCONV|tempaxis[0][4]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ATCONV|tempaxis[1][5]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ATCONV|tempaxis[4][0]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ATCONV|tempaxis[13][4]    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ATCONV|tempaxis[17][4]    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ATCONV|tempaxis[5][2]     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ATCONV|tempaxis[12][5]    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ATCONV|tempaxis[16][6]    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |ATCONV|kdcount[1]         ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |ATCONV|imgcount[11]       ;
+; 32:1               ; 6 bits    ; 126 LEs       ; 12 LEs               ; 114 LEs                ; Yes        ; |ATCONV|caddr_rd[5]~reg0   ;
+; 32:1               ; 6 bits    ; 126 LEs       ; 12 LEs               ; 114 LEs                ; Yes        ; |ATCONV|caddr_rd[11]~reg0  ;
+; 5:1                ; 13 bits   ; 39 LEs        ; 13 LEs               ; 26 LEs                 ; Yes        ; |ATCONV|kernel[0][0]       ;
+; 5:1                ; 13 bits   ; 39 LEs        ; 13 LEs               ; 26 LEs                 ; Yes        ; |ATCONV|kernel[1][12]      ;
+; 5:1                ; 13 bits   ; 39 LEs        ; 13 LEs               ; 26 LEs                 ; Yes        ; |ATCONV|kernel[2][8]       ;
+; 5:1                ; 13 bits   ; 39 LEs        ; 13 LEs               ; 26 LEs                 ; Yes        ; |ATCONV|kernel[3][12]      ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |ATCONV|col[0]             ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |ATCONV|row[5]             ;
+; 11:1               ; 9 bits    ; 63 LEs        ; 54 LEs               ; 9 LEs                  ; Yes        ; |ATCONV|cdata_wr[4]~reg0   ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |ATCONV|iaddr[0]~reg0      ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |ATCONV|Mux17              ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 24 LEs               ; 6 LEs                  ; No         ; |ATCONV|Mux17              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ATCONV|Mux9               ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |ATCONV|Mux4               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 82                          ;
+; cycloneiii_ff         ; 315                         ;
+;     CLR               ; 13                          ;
+;     ENA               ; 251                         ;
+;     ENA CLR           ; 23                          ;
+;     ENA CLR SCLR      ; 13                          ;
+;     ENA SCLR SLD      ; 9                           ;
+;     ENA SLD           ; 6                           ;
+; cycloneiii_lcell_comb ; 850                         ;
+;     arith             ; 386                         ;
+;         2 data inputs ; 148                         ;
+;         3 data inputs ; 238                         ;
+;     normal            ; 464                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 28                          ;
+;         2 data inputs ; 49                          ;
+;         3 data inputs ; 112                         ;
+;         4 data inputs ; 274                         ;
+;                       ;                             ;
+; Max LUT depth         ; 12.30                       ;
+; Average LUT depth     ; 6.48                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sat May 20 22:48:22 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ATCONV -c ATCONV
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file atconv.v
+    Info (12023): Found entity 1: ATCONV File: D:/hw4_new/ATCONV.v Line: 2
+Info (12127): Elaborating entity "ATCONV" for the top level hierarchy
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register kdcount[2] will power up to Low File: D:/hw4_new/ATCONV.v Line: 50
+    Critical Warning (18010): Register kdcount[0] will power up to Low File: D:/hw4_new/ATCONV.v Line: 50
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1069 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 29 input pins
+    Info (21059): Implemented 53 output pins
+    Info (21061): Implemented 987 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4788 megabytes
+    Info: Processing ended: Sat May 20 22:48:30 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:14
+
+

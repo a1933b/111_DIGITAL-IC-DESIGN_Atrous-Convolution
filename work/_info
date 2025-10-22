@@ -1,0 +1,81 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/hw3
+vATCONV
+Z0 !s110 1684663218
+!i10b 1
+!s100 eXlbdn71zlf7728cR]>^W0
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IYU]cRnZ^OCb_o5Gi1`YFJ2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dD:/hw4_new
+Z4 w1684236997
+Z5 8D:/hw4_new/ATCONV.vo
+Z6 FD:/hw4_new/ATCONV.vo
+!i122 223
+L0 32 23552
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1684663217.000000
+!s107 D:/hw4_new/ATCONV.vo|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|D:/hw4_new/ATCONV.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@a@t@c@o@n@v
+vhard_block
+R0
+!i10b 1
+!s100 VGS<9X137l5I?Cn9XJZ;M2
+R1
+IzcGhS^g`@ZB?Y<DiJBTV>0
+R2
+R3
+R4
+R5
+R6
+!i122 223
+L0 23585 34
+R7
+r1
+!s85 0
+31
+R8
+Z12 !s107 D:/hw4_new/ATCONV.vo|
+R9
+!i113 1
+R10
+R11
+vtestfixture
+!s110 1684663217
+!i10b 1
+!s100 <mN8PJzQ]812DOb@mEOR31
+R1
+InM1BTh6^eH`5[c4<12FW>3
+R2
+R3
+w1684170802
+8D:/hw4_new/testfixture.v
+FD:/hw4_new/testfixture.v
+!i122 222
+L0 8 173
+R7
+r1
+!s85 0
+31
+R8
+!s107 D:/hw4_new/testfixture.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/hw4_new/testfixture.v|
+!i113 1
+R10
+R11
